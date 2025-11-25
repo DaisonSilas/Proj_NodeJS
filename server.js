@@ -1,12 +1,21 @@
 import express from "express";
-import { log } from "./middlewares/log.js";
 import usersRoutes from "./routes/users.js";
+import productsRoutes from "./routes/products.js";
+import { log } from "./middlewares/log.js";
 
 const app = express();
 
-app.use(log);
+// Middleware para interpretar JSON (importante)
 app.use(express.json());
 
-app.use("/users", usersRoutes);
+// Middleware de log
+app.use(log);
 
-app.listen(3000, () => console.log("Servidor rodando na porta 3000"));
+// Rotas
+app.use("/users", usersRoutes);
+app.use("/products", productsRoutes);
+
+// Inicialização
+app.listen(3000, () => {
+  console.log("Servidor rodando na porta 3000");
+});
