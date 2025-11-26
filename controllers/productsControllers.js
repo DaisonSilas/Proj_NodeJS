@@ -41,3 +41,26 @@ export function deleteProduct(req, res) {
 
   return res.json({ message: "Produto removido", produto: deleted[0] });
 }
+//PUT - atualizar produto por ID
+export function updateProduct(req, res) {
+  const { id } = req.params;
+  const { nome } = req.body;
+
+  if (!nome) {
+    return res.status(400).json({ error: "Nome do produto obrigatório" });
+  }
+
+  // encontrar produto
+  const product = products.find(p => p.id == id);
+
+  if (!product) {
+    return res.status(404).json({ error: "Produto não encontrado" });
+  }
+
+  // atualizar
+  product.nome = nome;
+
+  return res.json({ message: "Produto atualizado", produto: product });
+}
+
+}
