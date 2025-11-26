@@ -63,4 +63,4 @@ export function updateProduct(req, res) {
   return res.json({ message: "Produto atualizado", produto: product });
 }
 
-}
+
