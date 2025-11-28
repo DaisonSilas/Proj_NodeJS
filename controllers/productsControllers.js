@@ -4,12 +4,12 @@ let products = [
   { id: 3, nome: "Monitor 144Hz" }
 ];
 
-// GET - listar produtos
+// GET
 export function getProducts(req, res) {
   return res.json(products);
 }
 
-// POST - adicionar produto
+// POST
 export function createProduct(req, res) {
   const { nome } = req.body;
 
@@ -27,7 +27,7 @@ export function createProduct(req, res) {
   return res.status(201).json(newProduct);
 }
 
-// DELETE - remover produto por ID
+// DELETE
 export function deleteProduct(req, res) {
   const { id } = req.params;
 
@@ -39,28 +39,33 @@ export function deleteProduct(req, res) {
 
   const deleted = products.splice(index, 1);
 
-  return res.json({ message: "Produto removido", produto: deleted[0] });
+  return res.json({
+    message: "Produto removido",
+    produto: deleted[0]
+  });
 }
-//PUT - atualizar produto por ID
+
+// PUT
 export function updateProduct(req, res) {
   const { id } = req.params;
   const { nome } = req.body;
 
-  if (!nome) {
-    return res.status(400).json({ error: "Nome do produto obrigatório" });
-  }
-
-  // encontrar produto
   const product = products.find(p => p.id == id);
 
   if (!product) {
     return res.status(404).json({ error: "Produto não encontrado" });
   }
 
-  // atualizar
+  if (!nome) {
+    return res.status(400).json({ error: "Nome obrigatório" });
+  }
+
   product.nome = nome;
 
-  return res.json({ message: "Produto atualizado", produto: product });
+  return res.json({
+    message: "Produto atualizado",
+    produto: product
+  });
 }
 
 

@@ -13,4 +13,5 @@ router.post("/", createProduct);       // criar
 router.put("/:id", updateProduct);     // atualizar
 router.delete("/:id", deleteProduct);  // remover
 
+
 export default router;
