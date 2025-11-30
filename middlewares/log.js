@@ -1,10 +1,10 @@
 export function log(req, res, next) {
-  const logMessage = `[${new Date().toISOString()}] ${req.method} ${req.url}
-Body: ${JSON.stringify(req.body)}
-Params: ${JSON.stringify(req.params)}
-`;
+  const start = performance.now();
 
-  console.log(logMessage);
+  res.on("finish", () => {
+    const duration = (performance.now() - start).toFixed(2);
+    console.log(`[LOG] ${req.method} ${req.originalUrl} - ${res.statusCode} - ${duration}ms`);
+  });
 
   next();
 }
