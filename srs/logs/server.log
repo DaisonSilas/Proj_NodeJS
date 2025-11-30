@@ -1,0 +1,8 @@
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-11-30T21:29:52.854Z"}
+{"level":"warn","message":"Produto não encontrado: ID 32","timestamp":"2025-11-30T21:52:17.742Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-11-30T22:03:49.640Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-11-30T22:03:58.933Z"}
+{"level":"warn","message":"Produto não encontrado: ID 7","timestamp":"2025-11-30T22:04:18.096Z"}
+{"level":"warn","message":"Tentativa de atualizar produto inexistente: ID 7","timestamp":"2025-11-30T22:05:18.790Z"}
+{"level":"warn","message":"Produto não encontrado: ID 7","timestamp":"2025-11-30T22:08:42.677Z"}
+{"level":"warn","message":"Tentativa de atualizar produto inexistente: ID 7","timestamp":"2025-11-30T22:08:52.539Z"}
