@@ -1,8 +1,4 @@
 import path from "path";
-import { fileURLToPath } from "url";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-export const ROOT = path.join(__dirname, "..");
+export const ROOT = import.meta.dirname + "/..";
 export const LOGS_PATH = path.join(ROOT, "logs");
