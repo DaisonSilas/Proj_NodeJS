@@ -1,69 +1,60 @@
-import { products } from "../data/products.js";
-import { logger } from "../config/logger.js";
+import { products } from "../models/productsModel.js";
 
-export function getAllProducts(req, res) {
-  logger.info("Listando todos os produtos");
+export const getAllProducts = (req, res) => {
   res.json(products);
-}
+};
 
-export function getProductById(req, res) {
-  const id = Number(req.params.id);
-  const product = products.find((p) => p.id === id);
+export const getProductById = (req, res) => {
+  const id = parseInt(req.params.id);
+  const product = products.find(p => p.id === id);
 
   if (!product) {
-    logger.warn(`Produto não encontrado: ID ${id}`);
-    return res.status(404).json({ error: "Produto não encontrado" });
+    return res.status(404).json({ message: "Produto não encontrado" });
   }
 
   res.json(product);
-}
+};
 
-export function createProduct(req, res) {
+export const createProduct = (req, res) => {
   const { nome } = req.body;
 
-  if (!nome) {
-    logger.warn("Produto sem nome");
-    return res.status(400).json({ error: "Nome do produto é obrigatório" });
-  }
+  // gera ID automático sequencial
+  const newId = products.length > 0
+    ? Math.max(...products.map(p => p.id)) + 1
+    : 1;
 
-  const newProduct = {
-    id: products.length + 1,
-    nome,
-  };
-
+  const newProduct = { id: newId, nome };
   products.push(newProduct);
-  logger.info(`Produto criado: ${JSON.stringify(newProduct)}`);
 
   res.status(201).json(newProduct);
-}
+};
 
-export function updateProduct(req, res) {
-  const id = Number(req.params.id);
+export const updateProduct = (req, res) => {
+  const id = parseInt(req.params.id);
   const { nome } = req.body;
 
-  const product = products.find((p) => p.id === id);
+  const product = products.find(p => p.id === id);
+
   if (!product) {
-    logger.warn(`Tentativa de atualizar produto inexistente: ID ${id}`);
-    return res.status(404).json({ error: "Produto não encontrado" });
+    return res.status(404).json({ message: "Produto não encontrado" });
   }
 
-  product.nome = nome ?? product.nome;
+  product.nome = nome;
 
-  logger.info(`Produto atualizado: ${JSON.stringify(product)}`);
   res.json(product);
-}
+};
 
-export function deleteProduct(req, res) {
-  const id = Number(req.params.id);
-  const index = products.findIndex((p) => p.id === id);
+export const deleteProduct = (req, res) => {
+  const id = parseInt(req.params.id);
+
+  const index = products.findIndex(p => p.id === id);
 
   if (index === -1) {
-    logger.warn(`Tentativa de excluir produto inexistente: ID ${id}`);
-    return res.status(404).json({ error: "Produto não encontrado" });
+    return res.status(404).json({ message: "Produto não encontrado" });
   }
 
-  const deleted = products.splice(index, 1);
+  products.splice(index, 1); // remove 1 item
 
-  logger.info(`Produto deletado: ${JSON.stringify(deleted[0])}`);
-  res.json({ message: "Produto removido" });
-}
+  res.status(204).send();
+};
+
