@@ -6,3 +6,28 @@
 {"level":"warn","message":"Tentativa de atualizar produto inexistente: ID 7","timestamp":"2025-11-30T22:05:18.790Z"}
 {"level":"warn","message":"Produto não encontrado: ID 7","timestamp":"2025-11-30T22:08:42.677Z"}
 {"level":"warn","message":"Tentativa de atualizar produto inexistente: ID 7","timestamp":"2025-11-30T22:08:52.539Z"}
+{"level":"warn","message":"Produto sem nome","timestamp":"2025-11-30T22:11:31.591Z"}
+{"level":"info","message":"Produto criado: {\"id\":4,\"nome\":\"Cadeira Gamer\"}","timestamp":"2025-11-30T22:11:43.238Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-11-30T22:12:18.105Z"}
+{"level":"info","message":"Produto atualizado: {\"id\":4,\"nome\":\"Cadeira Gamer\"}","timestamp":"2025-11-30T22:16:30.275Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-11-30T22:16:36.872Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-12-02T00:08:47.352Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-12-02T00:08:47.526Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-12-02T00:08:47.567Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-12-02T00:08:47.608Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-12-02T00:08:47.645Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-12-02T00:08:47.682Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-12-02T00:08:47.720Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-12-02T00:08:47.757Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-12-02T00:08:47.794Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-12-02T00:08:47.838Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-12-02T00:08:47.874Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-12-02T00:08:47.913Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-12-02T00:08:47.950Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-12-02T00:08:47.986Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-12-02T00:08:48.031Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-12-02T00:08:48.067Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-12-02T00:08:48.104Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-12-02T00:08:48.141Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-12-02T00:08:48.179Z"}
+{"level":"info","message":"Listando todos os produtos","timestamp":"2025-12-02T00:08:48.217Z"}
