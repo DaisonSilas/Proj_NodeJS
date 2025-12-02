@@ -7,7 +7,7 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-  "nome": "Cadeira Gamer",
+  "nome": "Headset",
   "price": 900
 }
 
