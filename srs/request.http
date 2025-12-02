@@ -1,4 +1,8 @@
+### GET all products
 GET http://localhost:3000/products
+
+###
+
 POST http://localhost:3000/products
 Content-Type: application/json
 
@@ -6,6 +10,9 @@ Content-Type: application/json
   "name": "Monitor",
   "price": 900
 }
+
+###
+
 PUT http://localhost:3000/products/1
 Content-Type: application/json
 
@@ -13,4 +20,7 @@ Content-Type: application/json
   "name": "Mouse Gamer",
   "price": 120
 }
+
+###
+
 DELETE http://localhost:3000/products/1
