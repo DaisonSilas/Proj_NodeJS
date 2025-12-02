@@ -1,4 +1,4 @@
-import { products } from "../models/productsModel.js";
+import { products } from "../data/products.js";
 
 export const getAllProducts = (req, res) => {
   res.json(products);
@@ -18,12 +18,12 @@ export const getProductById = (req, res) => {
 export const createProduct = (req, res) => {
   const { nome } = req.body;
 
-  // gera ID automático sequencial
   const newId = products.length > 0
     ? Math.max(...products.map(p => p.id)) + 1
     : 1;
 
   const newProduct = { id: newId, nome };
+
   products.push(newProduct);
 
   res.status(201).json(newProduct);
@@ -53,8 +53,9 @@ export const deleteProduct = (req, res) => {
     return res.status(404).json({ message: "Produto não encontrado" });
   }
 
-  products.splice(index, 1); // remove 1 item
+  products.splice(index, 1);
 
   res.status(204).send();
 };
+
 
