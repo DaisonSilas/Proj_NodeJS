@@ -3,6 +3,9 @@ import morgan from "morgan";
 import fs from "fs";
 import path from "path";
 import { LOGS_PATH } from "./config/paths.js";
+import dotenv from "dotenv";
+dotenv.config();
+
 
 import productsRoutes from "./routes/products.js";
 import usersRoutes from "./routes/users.js";
