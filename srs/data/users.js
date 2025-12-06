@@ -1,7 +1,4 @@
-export let users = [
-  {
-    id: 1,
-    username: "admin",
-    password: "$2a$10$abcdefghijklmnopqrstuv" // senha já criptografada (exemplo)
-  }
+export const users = [
+  { id: 1, nome: "Admin", email: "admin@test.com", senha: "$2b$10$teste" }
 ];
+
