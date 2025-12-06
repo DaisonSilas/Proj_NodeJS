@@ -1,26 +1,9 @@
-import { Router } from "express";
+import express from "express";
+import { registerUser, loginUser } from "../controllers/usersController.js";
 
+const router = express.Router();
 
-const router = Router();
-
-
-let users = [
-{ id: 1, name: "Ana" },
-{ id: 2, name: "Carlos" }
-];
-
-
-router.get("/", (req, res) => {
-res.json(users);
-});
-
-
-router.post("/", (req, res) => {
-const user = req.body;
-user.id = users.length + 1;
-users.push(user);
-res.status(201).json(user);
-});
-
+router.post("/register", registerUser);  
+router.post("/login", loginUser);
 
 export default router;
