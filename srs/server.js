@@ -1,27 +1,12 @@
-import express from "express";
-import morgan from "morgan";
-import fs from "fs";
-import path from "path";
-import { LOGS_PATH } from "./config/paths.js";
+// src/server.js
 import dotenv from "dotenv";
 dotenv.config();
 
+import app from "./app.js"; // <-- importa o app completo
 
-import productsRoutes from "./routes/products.js";
-import usersRoutes from "./routes/users.js";
+// Porta definida no .env ou fallback para 3000
+const PORT = process.env.PORT || 3000;
 
-import { log } from "./middlewares/log.js";
-import { errorHandler } from "./middlewares/errorHandler.js";
-
-
-const app = express();
-app.use(express.json());
-
-// Rotas
-app.use("/products", productsRoutes);
-app.use("/users", usersRoutes);
-
-// Middleware de erro (sempre no fim)
-app.use(errorHandler);
-
-app.listen(3000, () => console.log("Servidor rodando!"));
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});
